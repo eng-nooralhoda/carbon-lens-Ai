@@ -1,6 +1,7 @@
 import streamlit as st
-import pandas as pd
-st.title('🤖 carbon lens AI')
+import numpy as np
+import joplib
+st.title('🌍 carbon lens AI🌍')
 st.info('carbon lens AI is a cloud- powered machine learning tool that predicts CO2 emissions based on energy consumption data')
 with st.expander('Data'):
   st.write('**Data set**')
