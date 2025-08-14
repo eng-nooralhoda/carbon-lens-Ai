@@ -1,13 +1,11 @@
-# 📦 Streamlit App Starter Kit 
-```
-⬆️ (Replace above with your app's name)
-```
+# 🤖 carbon lens AI
 
-Description of the app ...
+
+carbon lens AI is a cloud powered machine learning tool that predicts Co2 emissions based on energy consumption data.
 
 ## Demo App
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://app-starter-kit.streamlit.app/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://carbon lens AI.streamlit.app/)
 
 ## GitHub Codespaces
 
