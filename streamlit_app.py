@@ -15,12 +15,12 @@ with st.expander('Data'):
   model = RandomForestRegressor(n_estimators=100, random_state=42) 
   model.fit
   (X_train, y_train) 
- y_pred = model.predict(X_test) 
-r2 = r2_score(y_test, y_pred) 
-rmse = root_mean_squared_error(y_test, y_pred) 
-feature_importance = pd.Series(model.feature_importances_, 
-index=X.columns).sort_values(ascending=False) 
-print("R² Score:", r2) 
-print("RMSE:", rmse) 
-print("\nFeature Importances:") 
-print(feature_importance) 
+  y_pred = model.predict(X_test) 
+  r2 = r2_score(y_test, y_pred) 
+  rmse = root_mean_squared_error(y_test, y_pred) 
+  feature_importance = pd.Series(model.feature_importances_, 
+  index=X.columns).sort_values(ascending=False) 
+  print("R² Score:", r2) 
+  print("RMSE:", rmse) 
+  print("\nFeature Importances:") 
+  print(feature_importance) 
