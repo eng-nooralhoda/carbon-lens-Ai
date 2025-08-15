@@ -6,14 +6,11 @@ from sklearn.metrics import r2_score, mean_squared_error
 import numpy as np
 
 # عنوان التطبيق
-st.title('🌍Carbon Lens AI')
+st.title('Carbon Lens AI')
 st.info('Carbon Lens AI is a cloud-powered machine learning tool that predicts CO2 emissions based on energy consumption data.')
 
-# تحميل وعرض البيانات
+# تحميل البيانات
 df = pd.read_csv('https://raw.githubusercontent.com/eng-nooralhoda/carbon-lens-Ai/refs/heads/master/CO2_cleaned_1950_onwards.csv')
-
-with st.expander('Data'):
-    st.write(df)
 
 # تحويل Country إلى كود رقمي
 df['Country_Code'] = df['Country'].astype('category').cat.codes
@@ -39,8 +36,18 @@ rmse = np.sqrt(mean_squared_error(y_test, y_pred))
 # أهمية الخصائص
 feature_importance = pd.Series(model.feature_importances_, index=X.columns).sort_values(ascending=False)
 
+# عرض البيانات والمتغيرات داخل Expander
+with st.expander('Data and Features'):
+    st.subheader('Original Data')
+    st.write(df)
+    st.subheader('Features (X)')
+    st.write(X)
+    st.subheader('Target (y)')
+    st.write(y)
+
 # عرض النتائج
+st.subheader('Model Results')
 st.write("R² Score:", r2)
 st.write("RMSE:", rmse)
-st.write("\nFeature Importances:")
+st.write("Feature Importances:")
 st.write(feature_importance)
