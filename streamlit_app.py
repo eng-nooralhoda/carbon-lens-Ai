@@ -7,7 +7,7 @@ with st.expander('Data'):
   df =pd. read_csv('https://raw.githubusercontent.com/eng-nooralhoda/carbon-lens-Ai/refs/heads/master/CO2_cleaned_1950_onwards.csv')
   df
   df = pd.read_csv('https://raw.githubusercontent.com/eng-nooralhoda/carbon-lens-Ai/refs/heads/master/CO2_cleaned_1950_onwards.csv') 
-  df['Country_Code'] = df['Country'].astype('category').
+  df['Country_Code'] = df['Country'].astype('category')
   cat.codes
   X = df[['Year', 'Country_Code', 'Coal', 'Oil', 'Gas', 'Cement', 'Flaring', 'Other']] 
   y = df['Total'] 
