@@ -51,6 +51,3 @@ st.write("R² Score:", r2)
 st.write("RMSE:", rmse)
 st.write("Feature Importances:")
 st.write(feature_importance)
-with st.expander('Data visualization'):
-    plt.figure(figsize=(10,6)); plt.scatter(df['Year'], df['Total']); st.pyplot()
-     
