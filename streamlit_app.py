@@ -52,5 +52,5 @@ st.write("RMSE:", rmse)
 st.write("Feature Importances:")
 st.write(feature_importance)
 with st.expander('Data visualization'):
-   #Year,Country,Coal,Oil,Gas,Cement,Flaring,Other
-    st.scatter_chart(data=df,x='Year,Country,Coal,Oil,Gas,Cement,Flaring,Other' y ='Total', color='feature')
+    plt.figure(figsize=(10,6)); plt.scatter(df['Year'], df['Total']); st.pyplot()
+     
