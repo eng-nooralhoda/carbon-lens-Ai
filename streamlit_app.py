@@ -6,7 +6,7 @@ from sklearn.metrics import r2_score, mean_squared_error
 import numpy as np
 
 # عنوان التطبيق
-st.title('Carbon Lens AI')
+st.title('🌍Carbon Lens AI🤖')
 st.info('Carbon Lens AI is a cloud-powered machine learning tool that predicts CO2 emissions based on energy consumption data.')
 
 # تحميل البيانات
