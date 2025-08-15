@@ -7,7 +7,7 @@ with st.expander('Data'):
   df =pd. read_csv('https://raw.githubusercontent.com/eng-nooralhoda/carbon-lens-Ai/refs/heads/master/CO2_cleaned_1950_onwards.csv')
   df
   st.write('**X**')
-  X= df.drop('Year', 'Country_Code', 'Coal', 'Oil', 'Gas', 'Cement', 'Flaring', 'Other')
+  X= df.drop('('Year', 'Country_Code', 'Coal', 'Oil', 'Gas', 'Cement', 'Flaring', 'Other')')
   X
   st.write('**Y**')
   Y = df('Total')
