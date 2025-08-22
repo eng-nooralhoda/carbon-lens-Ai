@@ -51,3 +51,37 @@ st.write("R² Score:", r2)
 st.write("RMSE:", rmse)
 st.write("Feature Importances:")
 st.write(feature_importance)
+import matplotlib.pyplot as plt
+
+st.subheader("💨 احسب نسبة الانبعاثات بنفسك")
+
+# مدخلات المستخدم
+year = st.number_input("أدخل السنة", min_value=1900, max_value=2100, step=1)
+country = st.text_input("أدخل اسم الدولة")
+coal = st.number_input("كمية الفحم (Coal)", min_value=0.0)
+oil = st.number_input("كمية النفط (Oil)", min_value=0.0)
+gas = st.number_input("كمية الغاز (Gas)", min_value=0.0)
+cement = st.number_input("كمية الاسمنت (Cement)", min_value=0.0)
+
+# زر للحساب
+if st.button("احسب الانبعاثات"):
+    # مجموع الانبعاثات
+    total = coal + oil + gas + cement
+
+    if total == 0:
+        st.warning("⚠️ الرجاء إدخال قيم أكبر من صفر")
+    else:
+        # عرض النتيجة
+        st.success(f"✅ النتيجة: نسبة الانبعاثات في {country} لسنة {year} هي {total:.2f} طن CO2")
+
+        # تجهيز البيانات للرسم
+        sources = ['Coal', 'Oil', 'Gas', 'Cement']
+        values = [coal, oil, gas, cement]
+
+        # رسم Pie Chart
+        fig, ax = plt.subplots()
+        ax.pie(values, labels=sources, autopct='%1.1f%%', startangle=90)
+        ax.set_title(f"مصادر الانبعاثات في {country} لسنة {year}")
+
+        # عرض الرسم في Streamlit
+        st.pyplot(fig)
