@@ -85,3 +85,28 @@ if st.button("احسب الانبعاثات"):
 
         # عرض الرسم في Streamlit
         st.pyplot(fig)
+        import matplotlib.pyplot as plt
+import arabic_reshaper
+from bidi.algorithm import get_display
+
+# ضبط الخط (ممكن تغيّري لـ "Cairo" أو "Amiri" لو عندك خط عربي ثاني)
+plt.rcParams['font.family'] = 'Arial'
+
+# جملة عربية
+title_text = "انبعاثات الكربون"
+xlabel_text = "السنة"
+ylabel_text = "الانبعاثات"
+
+# إصلاح الحروف العربية
+title = get_display(arabic_reshaper.reshape(title_text))
+xlabel = get_display(arabic_reshaper.reshape(xlabel_text))
+ylabel = get_display(arabic_reshaper.reshape(ylabel_text))
+
+# مثال رسم
+fig, ax = plt.subplots()
+ax.plot(df['Year'], df['Total'])  # غيّري حسب الأعمدة اللي عندك
+ax.set_title(title)
+ax.set_xlabel(xlabel)
+ax.set_ylabel(ylabel)
+
+st.pyplot(fig)
